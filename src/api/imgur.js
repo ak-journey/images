@@ -12,10 +12,10 @@ export default {
     
     window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(querystring)}`
   },
-  fetchImages() {
+  fetchImages(token) {
     return axios.get(`${ROOT_URL}/3/account/me/images`, {
       headers: {
-        Authorization: `Bearer ${process.env.VUE_APP_CLIENT_ID}`
+        Authorization: `Bearer ${token}`
       }
     })
   }
